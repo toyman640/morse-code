@@ -59,3 +59,9 @@ end
 def decode_word(morse_word)
   morse_word.strip.split.map { |char| decode_char(char) }.join
 end
+
+def decode(morse_mssg)
+  morse_mssg.strip.split('   ').map { |word| decode_word(word) }.join(' ')
+end
+
+puts decode('      .-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
